@@ -1,14 +1,15 @@
-import Head from "next/head";
-import Image from "next/image";
-import useStore from "../store";
+import bearsStore from "../store/bearsStore";
 
 export default function Home() {
-  const bears = useStore((state) => state.bears);
-  const increasePopulation = useStore((state) => state.increasePopulation);
+  const bears = bearsStore((state) => state.bears);
+  const increasePopulation = bearsStore((state) => state.increasePopulation);
+  const removeAllBears = bearsStore((state) => state.removeAllBears);
+
   return (
     <div>
       <p>{bears}</p>
-      <button onClick={increasePopulation}>one up</button>
+      <button onClick={() => increasePopulation(2)}>+2</button>
+      <button onClick={() => removeAllBears(0)}>0</button>
     </div>
   );
 }

@@ -3,11 +3,11 @@ import { persist } from "zustand/middleware";
 
 let store = (set) => ({
   bears: 0,
-  increasePopulation: (payloads) => set((state) => ({ bears: state.bears + payloads })),
-  removeAllBears: (payloads) => set({ bears: payloads }),
+  addBears: (payloads) => set((state) => ({ bears: state.bears + payloads })),
+  setZeroBears: (payloads) => set({ bears: payloads }),
 });
 
-store = persist(store, { name: "_dhp" });
+store = persist(store, { name: "_bears" });
 
 const useStore = create(store);
 

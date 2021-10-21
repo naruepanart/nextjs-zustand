@@ -12,11 +12,11 @@ export default function Home() {
 
   return (
     <div>
-      <p>{bears}</p>
+      <h1>{bears}</h1>
       <button onClick={() => addBears(2)}>+2</button>
       <button onClick={() => setZeroBears(0)}>0</button>
       <hr></hr>
-      <p>{teddy}</p>
+      <h1>{teddy}</h1>
       <button onClick={() => addTeddy(5)}>+5</button>
       <button onClick={() => setZeroTeddy(0)}>0</button>
     </div>
